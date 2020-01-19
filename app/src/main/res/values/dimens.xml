@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region Indents -->
+    <dimen name="indent_extra_large">72dp</dimen>
+    <dimen name="indent_very_large">56dp</dimen>
+    <dimen name="indent_xlarge">40dp</dimen>
+    <dimen name="indent_xxlarge">48dp</dimen>
+    <dimen name="indent_large">32dp</dimen>
+    <dimen name="indent_medium">24dp</dimen>
+    <dimen name="indent_normal">16dp</dimen>
+    <dimen name="indent_small">8dp</dimen>
+    <dimen name="indent_mini">6dp</dimen>
+    <dimen name="indent_micro">4dp</dimen>
+    <dimen name="indent_nano">2dp</dimen>
+    <!-- endregion-->
+
+    <!-- region Card corner radius-->
+    <dimen name="radius_normal">6dp</dimen>
+    <dimen name="radius_small">4dp</dimen>
+    <dimen name="radius_mini">2dp</dimen>
+    <!-- endregion-->
+
+    <!-- region Font -->
+    <dimen name="font_size_very_large">32sp</dimen>
+    <dimen name="font_size_xxxlarge">24sp</dimen>
+    <dimen name="font_size_xxlarge">21sp</dimen>
+    <dimen name="font_size_xlarge">18sp</dimen>
+    <dimen name="font_size_large">16sp</dimen>
+    <dimen name="font_size_normal">14sp</dimen>
+    <dimen name="font_size_small">12sp</dimen>
+    <!-- endregion-->
+</resources>

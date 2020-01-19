@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["compile_sdk"]
+
+    defaultConfig {
+        minSdkVersion config["min_sdk"]
+        targetSdkVersion config["target_sdk"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def applicationDependencies = rootProject.ext.mainApplication
+
+
+    implementation project(path: ':network')
+    implementation project(path: ':domain')
+    api project(path: ':core')
+
+    implementation applicationDependencies.kotlin
+
+    //region compile time dependencies
+    kapt applicationDependencies.daggerCompiler
+    //endregion
+
+    //region application dependencies
+    implementation applicationDependencies.dagger
+    //endregion
+
+    kapt applicationDependencies.roomCompiler
+    implementation applicationDependencies.roomRuntime
+    implementation applicationDependencies.roomRx
+
+    //region rx
+    implementation applicationDependencies.rxJava
+    implementation applicationDependencies.rxAndroid
+    //endregion
+
+}

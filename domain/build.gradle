@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    def applicationDependencies = rootProject.ext.mainApplication
+
+    //region application dependencies
+    implementation applicationDependencies.kotlin
+
+    implementation(applicationDependencies.rxAndroid)
+    implementation(applicationDependencies.rxJava)
+
+    //endregion
+
+}

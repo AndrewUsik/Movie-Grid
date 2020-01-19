@@ -1,0 +1,2 @@
+include ':app', ':domain', ':core', ':network', ':data'
+rootProject.name='Movie Grid'

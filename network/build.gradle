@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["compile_sdk"]
+
+    defaultConfig {
+        minSdkVersion config["min_sdk"]
+        targetSdkVersion config["target_sdk"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "PRODUCTION_ENDPOINT", '"https://api.themoviedb.org/"'
+        buildConfigField "String", "API_KEY", '"ENTER YOUR API KEY"'
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+
+        }
+    }
+
+}
+
+dependencies {
+    def applicationDependencies = rootProject.ext.mainApplication
+
+    //region compile time dependencies
+    kapt applicationDependencies.daggerCompiler
+    //endregion
+
+    //region application dependencies
+    implementation applicationDependencies.kotlin
+    implementation applicationDependencies.dagger
+    //endregion
+
+    //region network/io
+    implementation applicationDependencies.okHttp
+    compileOnly applicationDependencies.javaxAnnotation
+    //implementation applicationDependencies.okHttpWS
+    implementation applicationDependencies.retrofit
+    implementation applicationDependencies.gson
+    implementation applicationDependencies.retrofitConverterGson
+    implementation applicationDependencies.adapterRxJava
+    implementation applicationDependencies.loggingInterceptor
+    //endregion
+
+    //region image processing
+    implementation applicationDependencies.glide
+    kapt applicationDependencies.glideCompiler
+    //endregion
+
+    implementation project(':core')
+}

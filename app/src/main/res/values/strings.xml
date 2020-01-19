@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Movie Grid</string>
+
+    <string name="alert_fail">Failed</string>
+    <string name="error_title">Error</string>
+    <string name="network_error">Network error</string>
+    <string name="ok_title">OK</string>
+
+    <string name="main_fragment_toolbar_title">Latest Grid</string>
+
+    <string name="detail_score_title">Score:</string>
+    <string name="detail_rating_title">Rating:</string>
+    <string name="detail_release_date_title">Release Date:</string>
+
+</resources>
