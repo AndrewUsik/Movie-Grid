@@ -59,10 +59,10 @@ dependencies {
     implementation(applicationDependencies.glideTransformation)
     kapt(applicationDependencies.glideCompiler)
 
-    implementation (applicationDependencies.exifinterface)
-    implementation (applicationDependencies.annotation)
+    implementation(applicationDependencies.exifinterface)
+    implementation(applicationDependencies.annotation)
 
-    kapt (applicationDependencies.daggerCompiler)
+    kapt(applicationDependencies.daggerCompiler)
 
     implementation(applicationDependencies.multidex)
 
