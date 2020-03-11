@@ -20,8 +20,8 @@ abstract class BaseFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    protected fun replaceFragmentWithBackStack(fragment: BaseFragment) {
-        (activity as BaseActivity).replaceFragmentWithBackStack(fragment)
+    protected fun addFragment(fragment: BaseFragment) {
+        (activity as BaseActivity).addFragment(fragment)
     }
 
     protected fun initToolbar(toolbar: Toolbar) {

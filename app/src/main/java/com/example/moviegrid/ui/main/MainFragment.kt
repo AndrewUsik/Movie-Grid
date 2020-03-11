@@ -1,6 +1,7 @@
 package com.example.moviegrid.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -87,6 +88,7 @@ open class MainFragment : BaseFragment() {
 
         val scrollListener = object : EndlessRecyclerViewScrollListener(gridLayoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
+                Log.d("LOAD_MORE", "$page  $totalItemsCount")
                 viewModel.getMovies(page)
             }
         }
@@ -100,7 +102,7 @@ open class MainFragment : BaseFragment() {
 
         listAdapter.setClickListener(object : AdapterClickListener<Movie> {
             override fun onItemClick(data: Movie) {
-                replaceFragmentWithBackStack(DetailFragment.newInstance(data))
+                addFragment(DetailFragment.newInstance(data))
             }
         })
     }

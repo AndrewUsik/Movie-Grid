@@ -9,7 +9,6 @@ import com.example.moviegrid.databinding.FragmentDetailBinding
 import com.example.moviegrid.domain.entity.Movie
 import com.example.moviegrid.extentions.formatDate
 import com.example.moviegrid.extentions.getPosterUrl
-import com.example.moviegrid.extentions.loadBlurImage
 import com.example.moviegrid.extentions.loadImage
 
 class DetailFragment : BaseFragment() {
@@ -54,7 +53,6 @@ class DetailFragment : BaseFragment() {
         binding.run {
             context?.let {
                 loadImage(it, imageView, data.posterPath?.getPosterUrl())
-                loadBlurImage(it, backPoster, data.backdropPath?.getPosterUrl())
             }
             titleText.text = data.title
             descriptionText.text = data.overview

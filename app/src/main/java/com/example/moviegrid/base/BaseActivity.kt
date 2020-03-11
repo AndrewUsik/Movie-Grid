@@ -32,12 +32,12 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun replaceFragmentWithBackStack(fragment: BaseFragment) {
+    fun addFragment(fragment: BaseFragment) {
         try {
             supportFragmentManager
                 .beginTransaction()
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                .replace(R.id.container, fragment)
+                .add(R.id.container, fragment)
                 .addToBackStack(null)
                 .commitAllowingStateLoss()
         } catch (e: IllegalStateException) {

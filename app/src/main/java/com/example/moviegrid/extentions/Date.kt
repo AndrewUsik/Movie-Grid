@@ -9,7 +9,7 @@ fun String.formatDate(): String {
         format.timeZone = TimeZone.getTimeZone("UTC")
         val newDate = format.parse(this)
         format = SimpleDateFormat("MMM dd, yyyy", Locale.US)
-        format.format(newDate)
+        format.format(newDate?: Date())
     } catch (e: Exception) {
         e.printStackTrace()
         this

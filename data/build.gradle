@@ -50,6 +50,8 @@ dependencies {
     //region rx
     implementation applicationDependencies.rxJava
     implementation applicationDependencies.rxAndroid
+
+    implementation applicationDependencies.gson
     //endregion
 
 }

@@ -1,17 +1,17 @@
 package com.example.moviegrid.data.gateway
 
+import com.example.moviegrid.data.repository.MovieRepository
 import com.example.moviegrid.domain.entity.Movie
 import com.example.moviegrid.domain.gateway.MovieGateway
-import com.example.moviegrid.network.NetworkClient
 import io.reactivex.Observable
 import javax.inject.Inject
 
 class MovieGatewayImpl @Inject constructor(
-    private val networkClient: NetworkClient
+    private val repository: MovieRepository
 ) : MovieGateway {
     override fun getNowPlayingMovies(page: Int): Observable<List<Movie>> {
-        return networkClient.getNowPlayingMovies(page).map { it ->
-            it.results?.map {
+        return repository.getPlayingMovies(page).map { it ->
+            it.map {
                 Movie(
                     adult = it.adult,
                     backdropPath = it.backdropPath,
@@ -28,7 +28,7 @@ class MovieGatewayImpl @Inject constructor(
                     voteAverage = it.voteAverage,
                     voteCount = it.voteCount
                 )
-            } ?: emptyList()
-        }.toObservable()
+            }
+        }
     }
 }
