@@ -1,3 +1,3 @@
 ## Movie-Grid
 
-Sample app to show Clean Architecture with Kotlin
+Sample app to show Kotlin + Clean Architecture + MVVM + Dagger + Room + RxJava + Retrofit
